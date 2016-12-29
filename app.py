@@ -27,7 +27,7 @@ def configured_app():
     # 注册路由
     register_routes(app)
     # 配置日志
-    configure_log(app)
+
     # 返回配置好的 app 实例
     return app
 
