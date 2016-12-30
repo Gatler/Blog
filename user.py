@@ -26,7 +26,7 @@ def current_user():
 def login_view():
     u = current_user()
     if u is not None:
-        return redirect('/blog')
+        return redirect('/bbs')
     return render_template('user_login.html')
 
 
