@@ -7,14 +7,14 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="/static/js/api.js"></script>
     <script src="/static/js/weibo.js"></script>
-    <title>微博</title>
+    <title>留言板</title>
 </head>
 <body>
     <div class="head">
-      <div class="left title">Gatler</div>
+    <div class="left title"><a href="/bbs">Gatler</a></div>
       <div class="right">
-        <span><a href="/blog">论坛</a></span>
-        <span><a href="/weibo">留言板</a></span>
+        <span><a href="/bbs">论坛</a></span>
+        <span><a href="/message">留言板</a></span>
         <span><a href="/profile">设置</a></span>
       </div>
     </div>
@@ -24,7 +24,7 @@
 
       <div class="box add-box">
         <!-- <form action="/add" method="post" class="out"> -->
-            <input id="id-input-weibo" name="weibo" class="wei" placeholder="Weibo"> </input>
+            <input id="id-input-weibo" name="weibo" class="wei" placeholder="留言内容"> </input>
             <br>
             <button id="id-button-weibo-add" class="pure-button pure-button-primary sub"
              type="submit">发送！</button>
@@ -33,7 +33,7 @@
       <div class="height-20"></div>
 
       <div class="box weibo-container">
-        {% for t in weibos %}
+        {% for t in messages %}
           <div class="weibo-cell cell item">
             <img src="{{ t.avatar }}" class="avatar">
             <span>{{ t.weibo }}</span>

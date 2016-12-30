@@ -4,7 +4,7 @@ from flask import render_template
 app = Flask(__name__)
 # 设置 secret_key 来使用 flask 自带的 session
 # 这个字符串随便你设置什么内容都可以
-app.secret_key = 'fsdfhloip.ljhklh'
+app.secret_key = 'fsdfhl oip.ljhklh'
 # 这一行是套路
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
@@ -12,15 +12,15 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # 引入、注册蓝图
 # 有一个 url_prefix 可以用来给蓝图中的每个路由加一个前缀
 
-from weibo import main as weibo_routes
-from user import main as user_routes
-from blog import main as blog_routes
-from api import main as api_routes
+from message import main as message_route
+from user import main as user_route
+from bbs import main as bbs_route
+from api import main as api_route
 
-app.register_blueprint(weibo_routes)
-app.register_blueprint(user_routes)
-app.register_blueprint(blog_routes, url_prefix='/blog')
-app.register_blueprint(api_routes,
+app.register_blueprint(message_route)
+app.register_blueprint(user_route)
+app.register_blueprint(bbs_route, url_prefix='/bbs')
+app.register_blueprint(api_route,
                        url_prefix='/api')
 
 
